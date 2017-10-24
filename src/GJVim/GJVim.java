@@ -1,8 +1,8 @@
 package GJVim;
 
 public class GJVim {
-	private static final long serialVersionUID = 1L;
-	public static void main(String[] args) {
-		new Window();
+    public static void main(String[] args) {
+        Window window = new Window();
+        window.setVisible(true);
     }
 }
