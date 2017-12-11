@@ -1,20 +1,21 @@
 package GJVim;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import java.awt.BorderLayout;
 
-public class Pane extends JPanel {
-    private static final long serialVersionUID = 1L;
-    private JTextArea textArea;
-    private JToolBar toolBar;
-    public Pane() {
+@SuppressWarnings("serial")
+class Pane extends JPanel{
+    JPanel pane;  // this instance
+    JTextArea textArea;
+
+    Pane() {
         super();
-        // textArea作成
+        pane = this;
+        pane.setLayout(new BorderLayout());
+
+        // textArea
         textArea = new JTextArea();
-        add(textArea, BorderLayout.CENTER);
-        // toolBar作成
-        toolBar = new JToolBar();
-        toolBar.setBackground(Color.BLUE);
-        add(toolBar, BorderLayout.SOUTH);
+        pane.add(textArea);
     }
 }
