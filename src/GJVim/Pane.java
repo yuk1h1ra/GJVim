@@ -17,5 +17,9 @@ class Pane extends JPanel{
         // textArea
         textArea = new JTextArea();
         pane.add(textArea);
+
+        // toolbar
+        toolBar = new ToolBar();
+        pane.add(toolBar);
     }
 }
