@@ -10,16 +10,13 @@ class Pane extends JPanel{
     JTextArea textArea;
 
     Pane() {
+        // this instance
         super();
         pane = this;
         pane.setLayout(new BorderLayout());
 
         // textArea
-        textArea = new JTextArea();
+        textArea = new JTextArea("this is text area");
         pane.add(textArea);
-
-        // toolbar
-        toolBar = new ToolBar();
-        pane.add(toolBar);
     }
 }
