@@ -8,15 +8,24 @@ import java.awt.BorderLayout;
 class Pane extends JPanel{
     JPanel pane;  // this instance
     JTextArea textArea;
+    Status status;
+
+    private enum Status {
+        Normal,
+        Insert,
+        Visual
+    }
 
     Pane() {
         // this instance
         super();
         pane = this;
+        status = Status.Normal;
         pane.setLayout(new BorderLayout());
 
         // textArea
-        textArea = new JTextArea("this is text area");
+        textArea = new JTextArea();
         pane.add(textArea);
     }
+
 }
