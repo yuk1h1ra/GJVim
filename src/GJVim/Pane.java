@@ -7,6 +7,7 @@ import javax.swing.text.JTextComponent;
 import javax.swing.text.TextAction;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -42,6 +43,7 @@ class Pane extends JPanel{
             setNormal();
         }
         textArea.addKeyListener( new KeyCheck() );
+        textArea.setFont(new Font("Arial", Font.PLAIN, 30));
         this.add(textArea);
     }
 
@@ -60,6 +62,7 @@ class Pane extends JPanel{
     public void setVisual() {
         this.status = Status.Visual;
         textArea.setKeymap(JTextComponent.getKeymap("visual"));
+        System.out.println("Visual Mode");
     }
 
     private class KeyCheck extends KeyAdapter {
@@ -68,8 +71,11 @@ class Pane extends JPanel{
             if(keyCode == KeyEvent.VK_ESCAPE) {
                 pane.setNormal();
             }
-            else if(keyCode == 73 && status == Status.valueOf("Normal")) {
-                pane.setInsert();
+            else if(status == Status.valueOf("Normal")) {
+                if(keyCode == 73)
+                    pane.setInsert();
+                if(keyCode == 86)
+                    pane.setVisual();
             }
         }
     }

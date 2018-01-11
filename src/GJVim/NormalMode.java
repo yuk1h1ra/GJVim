@@ -12,7 +12,9 @@ class NormalMode {
         new JTextComponent.KeyBinding( KeyStroke.getKeyStroke("typed h"), DefaultEditorKit.backwardAction ),
         new JTextComponent.KeyBinding( KeyStroke.getKeyStroke("typed l"), DefaultEditorKit.forwardAction ),
 
-        new JTextComponent.KeyBinding( KeyStroke.getKeyStroke("typed x"), DefaultEditorKit.deleteNextCharAction )
+        new JTextComponent.KeyBinding( KeyStroke.getKeyStroke("typed x"), DefaultEditorKit.deleteNextCharAction ),
+        new JTextComponent.KeyBinding( KeyStroke.getKeyStroke("typed p"), DefaultEditorKit.pasteAction )
+
     };
 
     public static JTextComponent.KeyBinding[] getBindings() {
